@@ -2138,3 +2138,127 @@ body {
 .embed-note a:hover {
   border-color: var(--forest);
 }
+
+/* ---------- why page: compact mind map ---------- */
+
+.page-head--tiny {
+  padding-block: clamp(1.25rem, 3vw, 2rem) clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.mindmap {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.mm-hub-kicker {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--forest);
+}
+
+.mm-hub-title {
+  margin-top: 0.5rem;
+  font-family: var(--display);
+  font-size: clamp(1.5rem, 1.15rem + 1.6vw, 2.2rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+}
+
+.mm-hub-note {
+  margin-top: 0.6rem;
+  color: var(--grey);
+  font-size: 0.95rem;
+  max-width: 40ch;
+}
+
+.mm-branches {
+  position: relative;
+  display: grid;
+  gap: 0.85rem;
+  padding-left: 1.5rem;
+}
+
+.mm-branches::before {
+  content: "";
+  position: absolute;
+  left: 0.3rem;
+  top: 1.1rem;
+  bottom: 1.1rem;
+  width: 1px;
+  background: var(--line-strong);
+}
+
+.mm-node {
+  position: relative;
+  display: grid;
+  gap: 0.15rem;
+  padding: 0.5rem 0;
+}
+
+.mm-node::before {
+  content: "";
+  position: absolute;
+  left: -1.2rem;
+  top: 1.1rem;
+  width: 1.2rem;
+  height: 1px;
+  background: var(--line-strong);
+}
+
+.mm-num {
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: var(--forest);
+}
+
+.mm-title {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.98rem;
+  line-height: 1.25;
+}
+
+.mm-line {
+  color: var(--grey);
+  font-size: 0.85rem;
+}
+
+@media (min-width: 900px) {
+  .mindmap {
+    grid-template-columns: minmax(0, 0.42fr) minmax(0, 0.58fr);
+    align-items: center;
+    gap: 0;
+  }
+
+  .mm-hub {
+    position: relative;
+    padding-right: 3rem;
+  }
+
+  .mm-hub::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 3rem;
+    height: 1px;
+    background: var(--line-strong);
+  }
+
+  .mm-branches {
+    padding-left: 3rem;
+  }
+
+  .mm-branches::before {
+    left: 0;
+  }
+
+  .mm-node::before {
+    left: -3rem;
+    width: 3rem;
+  }
+}
